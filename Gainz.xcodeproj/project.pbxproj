@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		519067032592A16E006F82C0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519067022592A16E006F82C0 /* Enums.swift */; };
+		519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C7E0125941A200015C4A8 /* SettingsViewController.swift */; };
 		51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0A6258C39540005D4A4 /* AppDelegate.swift */; };
 		51DFD0A9258C39540005D4A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */; };
 		51DFD0AB258C39540005D4A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0AA258C39540005D4A4 /* ViewController.swift */; };
@@ -15,6 +17,9 @@
 		51DFD0B3258C39560005D4A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DFD0B1258C39560005D4A4 /* LaunchScreen.storyboard */; };
 		51DFD0BE258C39560005D4A4 /* GainzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0BD258C39560005D4A4 /* GainzTests.swift */; };
 		51DFD0C9258C39560005D4A4 /* GainzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0C8258C39560005D4A4 /* GainzUITests.swift */; };
+		51DFD0E1258EC3860005D4A4 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0E0258EC3860005D4A4 /* LocalStorageService.swift */; };
+		51DFD0E7258EC5A00005D4A4 /* NameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0E6258EC5A00005D4A4 /* NameHelper.swift */; };
+		51DFD0EF258EE2A10005D4A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0EE258EE2A10005D4A4 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		519067022592A16E006F82C0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		519C7E0125941A200015C4A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		51DFD0A3258C39540005D4A4 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DFD0A6258C39540005D4A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +56,9 @@
 		51DFD0C4258C39560005D4A4 /* GainzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GainzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DFD0C8258C39560005D4A4 /* GainzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainzUITests.swift; sourceTree = "<group>"; };
 		51DFD0CA258C39560005D4A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51DFD0E0258EC3860005D4A4 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		51DFD0E6258EC5A00005D4A4 /* NameHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameHelper.swift; sourceTree = "<group>"; };
+		51DFD0EE258EE2A10005D4A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,12 @@
 		51DFD0A5258C39540005D4A4 /* Gainz */ = {
 			isa = PBXGroup;
 			children = (
-				51DFD0A6258C39540005D4A4 /* AppDelegate.swift */,
-				51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */,
-				51DFD0AA258C39540005D4A4 /* ViewController.swift */,
-				51DFD0AC258C39540005D4A4 /* Main.storyboard */,
+				51DFD0E5258EC5330005D4A4 /* Helpers */,
+				51DFD0DC258EC2760005D4A4 /* Initial Setup */,
+				51DFD0DB258EC23E0005D4A4 /* StoryBoards */,
+				51DFD0D9258EC20C0005D4A4 /* Services */,
+				51DFD0DA258EC2210005D4A4 /* View Controllers */,
 				51DFD0AF258C39560005D4A4 /* Assets.xcassets */,
-				51DFD0B1258C39560005D4A4 /* LaunchScreen.storyboard */,
 				51DFD0B4258C39560005D4A4 /* Info.plist */,
 			);
 			path = Gainz;
@@ -126,6 +136,51 @@
 				51DFD0CA258C39560005D4A4 /* Info.plist */,
 			);
 			path = GainzUITests;
+			sourceTree = "<group>";
+		};
+		51DFD0D9258EC20C0005D4A4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51DFD0E0258EC3860005D4A4 /* LocalStorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		51DFD0DA258EC2210005D4A4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				51DFD0AA258C39540005D4A4 /* ViewController.swift */,
+				51DFD0EE258EE2A10005D4A4 /* HomeViewController.swift */,
+				519C7E0125941A200015C4A8 /* SettingsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		51DFD0DB258EC23E0005D4A4 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				51DFD0B1258C39560005D4A4 /* LaunchScreen.storyboard */,
+				51DFD0AC258C39540005D4A4 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		51DFD0DC258EC2760005D4A4 /* Initial Setup */ = {
+			isa = PBXGroup;
+			children = (
+				51DFD0A6258C39540005D4A4 /* AppDelegate.swift */,
+				51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */,
+			);
+			path = "Initial Setup";
+			sourceTree = "<group>";
+		};
+		51DFD0E5258EC5330005D4A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				51DFD0E6258EC5A00005D4A4 /* NameHelper.swift */,
+				519067022592A16E006F82C0 /* Enums.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DFD0AB258C39540005D4A4 /* ViewController.swift in Sources */,
+				51DFD0E1258EC3860005D4A4 /* LocalStorageService.swift in Sources */,
+				51DFD0E7258EC5A00005D4A4 /* NameHelper.swift in Sources */,
 				51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */,
+				519067032592A16E006F82C0 /* Enums.swift in Sources */,
 				51DFD0A9258C39540005D4A4 /* SceneDelegate.swift in Sources */,
+				51DFD0EF258EE2A10005D4A4 /* HomeViewController.swift in Sources */,
+				519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

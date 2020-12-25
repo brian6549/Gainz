@@ -16,11 +16,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var weightTextField: UITextField!
-    
-    
   
     @IBOutlet weak var heightTextField: UITextField!
-    
     
     @IBOutlet weak var BMILabel: UILabel!
     
@@ -81,6 +78,11 @@ class ViewController: UIViewController {
             //need enumeration for the different categories
         
         //don't waste time, after this just go to the initial screen
+        
+        //save info to local storage
+        LocalStorageService.saveMassHeightBMI(mass: mass!, height: height!, BMI: BMI)
+        
+        //go to next screen
         
     }
     
