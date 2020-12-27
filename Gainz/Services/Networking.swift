@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 class Networking {
     
-    static func getRestaurants(completion: @escaping ([Restaurant]?) -> Void) {
+    static func getRestaurants(location: CLLocation,completion: @escaping ([Restaurant]?) -> Void) {
         
         let headers = [
             "x-api-key": "bcfc229f8f26b4c7dde0ab3c50198dbc",
@@ -18,7 +19,7 @@ class Networking {
             "x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://us-restaurant-menus.p.rapidapi.com/v2/restaurants/distance?lat=40.68919&minutes=10&mode=driving&lon=-73.992378&size=10&page=1&fullmenu=false")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://us-restaurant-menus.p.rapidapi.com/v2/restaurants/distance?lat=\(location.coordinate.latitude)&minutes=10&mode=driving&lon=\(location.coordinate.longitude)&size=20&page=1&fullmenu=false")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -90,8 +91,8 @@ class Networking {
         dataTask.resume()
     }
     
-    static func getParks(completion: @escaping ([Park]?) -> Void) {
-        let urlString = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=parks&location=40.68919,-73.992378&radius=5000&key=AIzaSyBTFmszFHSDmgUZNua-r6wwISTr3V16ruY"
+    static func getParks(location: CLLocation,completion: @escaping ([Park]?) -> Void) {
+        let urlString = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=parks&location=\(location.coordinate.latitude),\(location.coordinate.longitude)&radius=5000&key=AIzaSyBTFmszFHSDmgUZNua-r6wwISTr3V16ruY"
         
         let url = URL(string: urlString)!
         
@@ -130,8 +131,8 @@ class Networking {
         dataTask.resume()
     }
     
-    static func getGyms(completion: @escaping ([Gym]?) -> Void) {
-        let urlString = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=gyms&location=40.68919,-73.992378&radius=5000&key=AIzaSyBTFmszFHSDmgUZNua-r6wwISTr3V16ruY"
+    static func getGyms(location: CLLocation ,completion: @escaping ([Gym]?) -> Void) {
+        let urlString = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=gyms&location=\(location.coordinate.latitude),\(location.coordinate.longitude)&radius=5000&key=AIzaSyBTFmszFHSDmgUZNua-r6wwISTr3V16ruY"
         
         let url = URL(string: urlString)!
         

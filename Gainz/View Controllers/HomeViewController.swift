@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 //will eventually make into a profile but this works for now
 
@@ -30,6 +31,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var seeGymsButton: UIButton!
     
+    let locationManager = CLLocationManager()
+    var location:CLLocation?
     
     let BMI = LocalStorageService.loadMassHeightBMI()?[2] ?? 0
     
@@ -56,11 +59,16 @@ class HomeViewController: UIViewController {
         
     }
     
+    var destinationType:DestinationType?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        checkLocationServices()
+        checkAuthorizationForLocation()
         
         //check BMI values here
         //should make an enum for this
@@ -71,6 +79,9 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+       // locationManager.requestAlwaysAuthorization()
+       // locationManager.requestWhenInUseAuthorization()
         
         switch weightStat {
         case .underWeight:
@@ -108,6 +119,11 @@ class HomeViewController: UIViewController {
         
         if let settingsVC = segue.destination as? SettingsViewController {
             settingsVC.updateInfoDelegate = self
+        } else if let mapVC = segue.destination as? MapViewController {
+            mapVC.destinationType = self.destinationType
+            mapVC.location = self.locationManager.location
+        } else if let restaurantVC = segue.destination as? RestaurantTableViewController {
+            restaurantVC.locationManager = self.locationManager.location
         }
     }
     
@@ -119,17 +135,64 @@ class HomeViewController: UIViewController {
     
     @IBAction func seeRestaurantsTapped(_ sender: Any) {
         
-        print("tapped")
+       
         
         
     }
     
     
     @IBAction func seeParksTapped(_ sender: Any) {
-        //performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        destinationType = .park
+        performSegue(withIdentifier: "goToMap", sender: self)
     }
     
     @IBAction func seeGymsTapped(_ sender: Any) {
+        destinationType = .gym
+        performSegue(withIdentifier: "goToMap", sender: self)
+    }
+    
+    private func checkLocationServices() {
+        guard CLLocationManager.locationServicesEnabled() else {
+            // Here we must tell user how to turn on location on device
+            let alert = UIAlertController(title: "Error", message: "Turn on location services for better accuracy", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+            return
+        }
+            
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    private func checkAuthorizationForLocation() {
+        switch locationManager.authorizationStatus {
+        case .authorizedWhenInUse, .authorizedAlways:
+         
+            
+            locationManager.startUpdatingLocation()
+            
+            break
+        case .denied:
+            // Here we must tell user how to turn on location on device
+            let alert = UIAlertController(title: "Error", message: "Turn on location services for better accuracy", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+                // Here we must tell user that the app is not authorize to use location services
+            let alert = UIAlertController(title: "Error", message: "This app is not authorized to use location services", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+            break
+        @unknown default:
+            break
+        }
     }
     
 }
@@ -194,4 +257,11 @@ extension HomeViewController: updateOnScreenInfoDelegate {
         
     }
     
+}
+
+extension HomeViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.last
+       // print(location?.coordinate)
+    }
 }

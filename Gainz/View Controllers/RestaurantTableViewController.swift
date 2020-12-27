@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class RestaurantTableViewController: UITableViewController {
 
@@ -13,6 +14,7 @@ class RestaurantTableViewController: UITableViewController {
  
     var restaurants = [Restaurant]()
     
+    var locationManager:CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +26,9 @@ class RestaurantTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // self.navigationItem.rightBarButtonItem = self.e(location: <#CLLocation#>)ditButtonItem
         
-        Networking.getRestaurants { (restaurants) in
+        Networking.getRestaurants(location: locationManager ?? CLLocation(latitude: 74, longitude: 120)) { (restaurants) in
             if let restaurants = restaurants {
                 self.restaurants = restaurants
                 DispatchQueue.main.async {
@@ -46,21 +48,29 @@ class RestaurantTableViewController: UITableViewController {
         
         let actionSheet = UIAlertController(title: restaurant.restaurant_name, message: restaurant.hours, preferredStyle: .actionSheet)
         
-        let directionsAction = UIAlertAction(title: "Get Directions", style: .default, handler: nil)
-        
-        actionSheet.addAction(directionsAction)
-        
-        let callAction = UIAlertAction(title: "Call", style: .default) { (action) in
-            restaurant.restaurant_phone = restaurant.restaurant_phone?.trimmingCharacters(in: .whitespacesAndNewlines)
-            restaurant.restaurant_phone =  restaurant.restaurant_phone?.trimmingCharacters(in: .punctuationCharacters)
+        let directionsAction = UIAlertAction(title: "Get Directions", style: .default) {_ in
+            let urlString = "maps://?saddr=\(self.locationManager!.coordinate.latitude),\(self.locationManager!.coordinate.longitude)&daddr=\(restaurant.geo!["lat"] ?? 74),\(restaurant.geo!["lon"] ?? 122)&dirfgl=c"
             
-            if let url = URL(string: "tel://\(restaurant.restaurant_phone!)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        
+            let url = URL(string: urlString)!
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
         
-        actionSheet.addAction(callAction)
+        actionSheet.addAction(directionsAction)
+        if restaurant.restaurant_phone != "" {
+            let callAction = UIAlertAction(title: "Call", style: .default) { (action) in
+                        restaurant.restaurant_phone = restaurant.restaurant_phone?.trimmingCharacters(in: .whitespacesAndNewlines)
+                        restaurant.restaurant_phone =  restaurant.restaurant_phone?.trimmingCharacters(in: .punctuationCharacters)
+                        
+                        if let url = URL(string: "tel://\(restaurant.restaurant_phone!)") {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    
+                    }
+                    
+                    actionSheet.addAction(callAction)
+        }
+        
         
         if restaurant.restaurant_website != "" {
             let websiteAction = UIAlertAction(title: "Website", style: .default) { (action) in
@@ -79,6 +89,8 @@ class RestaurantTableViewController: UITableViewController {
         present(actionSheet, animated: true, completion: nil)
         
     }
+    
+    
     
     //just show the hours in the action sheet
     

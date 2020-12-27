@@ -46,10 +46,10 @@ class LocalStorageService {
         
         //if it's the initial setup then this value would be nil
         if let _ = loadMassHeightBMI() {
-            return true
+            return false
         }
         
-        return false
+        return true
         
     }
     

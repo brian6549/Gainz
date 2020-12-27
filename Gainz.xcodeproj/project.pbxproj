@@ -14,10 +14,10 @@
 		512D0F652598053D00F58CE6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F642598053D00F58CE6 /* MapViewController.swift */; };
 		512D0F6A25981BAB00F58CE6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F6925981BAB00F58CE6 /* Park.swift */; };
 		512D0F6F25981BC600F58CE6 /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F6E25981BC600F58CE6 /* Gym.swift */; };
+		512D0F7725992F5100F58CE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F7625992F5100F58CE6 /* SceneDelegate.swift */; };
 		519067032592A16E006F82C0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519067022592A16E006F82C0 /* Enums.swift */; };
 		519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C7E0125941A200015C4A8 /* SettingsViewController.swift */; };
 		51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0A6258C39540005D4A4 /* AppDelegate.swift */; };
-		51DFD0A9258C39540005D4A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */; };
 		51DFD0AB258C39540005D4A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0AA258C39540005D4A4 /* ViewController.swift */; };
 		51DFD0AE258C39540005D4A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DFD0AC258C39540005D4A4 /* Main.storyboard */; };
 		51DFD0B0258C39560005D4A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DFD0AF258C39560005D4A4 /* Assets.xcassets */; };
@@ -54,11 +54,11 @@
 		512D0F642598053D00F58CE6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		512D0F6925981BAB00F58CE6 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		512D0F6E25981BC600F58CE6 /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
+		512D0F7625992F5100F58CE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		519067022592A16E006F82C0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		519C7E0125941A200015C4A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		51DFD0A3258C39540005D4A4 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DFD0A6258C39540005D4A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		51DFD0AA258C39540005D4A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51DFD0AD258C39540005D4A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51DFD0AF258C39560005D4A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				51DFD0A6258C39540005D4A4 /* AppDelegate.swift */,
-				51DFD0A8258C39540005D4A4 /* SceneDelegate.swift */,
+				512D0F7625992F5100F58CE6 /* SceneDelegate.swift */,
 			);
 			path = "Initial Setup";
 			sourceTree = "<group>";
@@ -355,12 +355,12 @@
 				512D0F522596872E00F58CE6 /* Networking.swift in Sources */,
 				51DFD0E1258EC3860005D4A4 /* LocalStorageService.swift in Sources */,
 				51DFD0E7258EC5A00005D4A4 /* NameHelper.swift in Sources */,
+				512D0F7725992F5100F58CE6 /* SceneDelegate.swift in Sources */,
 				512D0F5D2597DB1400F58CE6 /* RestaurantTableViewCell.swift in Sources */,
 				51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */,
 				512D0F652598053D00F58CE6 /* MapViewController.swift in Sources */,
 				512D0F572597D7ED00F58CE6 /* RestaurantTableViewController.swift in Sources */,
 				519067032592A16E006F82C0 /* Enums.swift in Sources */,
-				51DFD0A9258C39540005D4A4 /* SceneDelegate.swift in Sources */,
 				51DFD0EF258EE2A10005D4A4 /* HomeViewController.swift in Sources */,
 				519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */,
 				512D0F6F25981BC600F58CE6 /* Gym.swift in Sources */,
