@@ -7,6 +7,7 @@
 
 import Foundation
 
+///the object for a restaurant
 struct Restaurant: Codable {
     
     var restaurant_name:String?

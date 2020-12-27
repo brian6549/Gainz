@@ -7,10 +7,10 @@
 
 import UIKit
 
+//cell that displays the restaurant
 class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var RestaurantNameLabel: UILabel!
-    
     
     @IBOutlet weak var AddressLabel: UILabel!
     

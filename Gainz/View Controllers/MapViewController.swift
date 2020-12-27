@@ -163,8 +163,6 @@ extension MapViewController: MKMapViewDelegate {
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         
-       
-         
     }
     
   }

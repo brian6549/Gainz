@@ -11,9 +11,8 @@ import UIKit
 
 //enetr your height label should be a picker
 
-//initial view controller
+///initial view controller
 class ViewController: UIViewController {
-    
     
     @IBOutlet weak var weightTextField: UITextField!
   

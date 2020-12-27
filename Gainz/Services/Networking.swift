@@ -11,6 +11,7 @@ import CoreLocation
 
 class Networking {
     
+    //from the APIs website
     static func getRestaurants(location: CLLocation,completion: @escaping ([Restaurant]?) -> Void) {
         
         let headers = [
@@ -38,53 +39,22 @@ class Networking {
                 }
                 
                 
-            
-                
-              //  let decoded = try? JSONDecoder().decode(Restaurant.self, from: data!)
-                
-               // print(decoded)
-                
-             //   print(JsonData)
-                
                 if  let theArray = JsonData["data"] as? [Any] {
                     
                     var restaurants = [Restaurant]()
                     for i in 0..<theArray.count {
                         if let jsonData = theArray[i] as? [String:Any] {
-                            
-                            
-                            
+                        
                             if let restaurant = Restaurant(dataDict: jsonData) {
                                 restaurants.append(restaurant)
-                            } //will send to a completion closure
-                        }//will put this in the restaurant initializer
+                            }
+                        }
                     }
                    completion(restaurants)
                 }
                 
                 print(JsonData["data"] as! [Any]) //turn into an array
-                //this is just like firebase
-                
-                // this will do for now
-                
-                //to be put in restaurant initializer
-                
-          /*  let name = jsonString?["restaurant_name"] as? String
-                 let phone = jsonString?["restaurant_phone"] as? String
-                 let restaurant_website = jsonString?["restaurant_website"] as? String
-                 let addressDict = jsonString?["address"] as? [String:String]
-                 let address = addressDict?["formatted"]
-                 let geo = jsonString?["geo"] as? [String:Double] */
-                
-                
-         //       let testObject = try JSONDecoder().decode(Restaurant.self, from: theArray[0])
-                //object
-                
-               
-                
-             //   let jsonData = jsonString.data(using: .utf8)!
-            //    let user = try! JSONDecoder().decode(Restaurant.self, from: jsonData)
-             //   print(user.last_name)
+        
             }
         })
 
@@ -109,11 +79,11 @@ class Networking {
                 }
                 
                 print(JsonData)
-                
+                //data come in as an array
                 if let theArray = JsonData["results"] as? [[String:Any]] {
                     var parks = [Park]()
                     for park in theArray {
-                       // print(park["name"] as! String)
+                       // initializer parses the rest
                         if let park = Park(dataDict: park) {
                             parks.append(park)
                         }
@@ -150,10 +120,11 @@ class Networking {
                 
                 print(JsonData)
                 
+                //data comes in as an array
                 if let theArray = JsonData["results"] as? [[String:Any]] {
                     var gyms = [Gym]()
                     for gym in theArray {
-                       // print(park["name"] as! String)
+                       // initializzer parses the rest
                         if let gym = Gym(dataDict: gym) {
                             gyms.append(gym)
                         }

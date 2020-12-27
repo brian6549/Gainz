@@ -10,8 +10,6 @@ import CoreLocation
 
 class RestaurantTableViewController: UITableViewController {
 
-    
- 
     var restaurants = [Restaurant]()
     
     var locationManager:CLLocation?
@@ -19,7 +17,6 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         tableView.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
@@ -59,10 +56,14 @@ class RestaurantTableViewController: UITableViewController {
         actionSheet.addAction(directionsAction)
         if restaurant.restaurant_phone != "" {
             let callAction = UIAlertAction(title: "Call", style: .default) { (action) in
-                        restaurant.restaurant_phone = restaurant.restaurant_phone?.trimmingCharacters(in: .whitespacesAndNewlines)
-                        restaurant.restaurant_phone =  restaurant.restaurant_phone?.trimmingCharacters(in: .punctuationCharacters)
                         
-                        if let url = URL(string: "tel://\(restaurant.restaurant_phone!)") {
+                var restaurantPhone =  restaurant.restaurant_phone?.replacingOccurrences(of: " ", with: "")
+                
+                restaurantPhone = restaurantPhone?.replacingOccurrences(of: ")", with: "")
+                restaurantPhone = restaurantPhone?.replacingOccurrences(of: "(", with: "")
+                restaurantPhone = restaurantPhone?.replacingOccurrences(of: "-", with: "")
+                        
+                if let url = URL(string: "tel://\(restaurantPhone ?? "")") {
                             UIApplication.shared.open(url, options: [:], completionHandler: nil)
                         }
                     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+///update initial user information
 class SettingsViewController: ViewController {
     
     var updateInfoDelegate:updateOnScreenInfoDelegate?

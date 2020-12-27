@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+///the object for a gym
 struct Gym {
     var name: String?
     var location:[String:Double]?

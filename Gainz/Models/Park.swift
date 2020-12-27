@@ -7,6 +7,7 @@
 
 import Foundation
 
+///the object for a park
 struct Park {
     var name: String?
     var location:[String:Double]?
