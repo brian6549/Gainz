@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512D0F4A259685D300F58CE6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F49259685D300F58CE6 /* Restaurant.swift */; };
+		512D0F522596872E00F58CE6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F512596872E00F58CE6 /* Networking.swift */; };
+		512D0F572597D7ED00F58CE6 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F562597D7ED00F58CE6 /* RestaurantTableViewController.swift */; };
+		512D0F5D2597DB1400F58CE6 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F5C2597DB1400F58CE6 /* RestaurantTableViewCell.swift */; };
+		512D0F652598053D00F58CE6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F642598053D00F58CE6 /* MapViewController.swift */; };
+		512D0F6A25981BAB00F58CE6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F6925981BAB00F58CE6 /* Park.swift */; };
+		512D0F6F25981BC600F58CE6 /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512D0F6E25981BC600F58CE6 /* Gym.swift */; };
 		519067032592A16E006F82C0 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519067022592A16E006F82C0 /* Enums.swift */; };
 		519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C7E0125941A200015C4A8 /* SettingsViewController.swift */; };
 		51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DFD0A6258C39540005D4A4 /* AppDelegate.swift */; };
@@ -40,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		512D0F49259685D300F58CE6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		512D0F512596872E00F58CE6 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		512D0F562597D7ED00F58CE6 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		512D0F5C2597DB1400F58CE6 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		512D0F642598053D00F58CE6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		512D0F6925981BAB00F58CE6 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		512D0F6E25981BC600F58CE6 /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
 		519067022592A16E006F82C0 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		519C7E0125941A200015C4A8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		51DFD0A3258C39540005D4A4 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +100,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		512D0F48259685BD00F58CE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				512D0F49259685D300F58CE6 /* Restaurant.swift */,
+				512D0F6925981BAB00F58CE6 /* Park.swift */,
+				512D0F6E25981BC600F58CE6 /* Gym.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		512D0F5B2597DAE200F58CE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				512D0F5C2597DB1400F58CE6 /* RestaurantTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		51DFD09A258C39540005D4A4 = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +141,12 @@
 		51DFD0A5258C39540005D4A4 /* Gainz */ = {
 			isa = PBXGroup;
 			children = (
+				512D0F48259685BD00F58CE6 /* Models */,
 				51DFD0E5258EC5330005D4A4 /* Helpers */,
 				51DFD0DC258EC2760005D4A4 /* Initial Setup */,
 				51DFD0DB258EC23E0005D4A4 /* StoryBoards */,
 				51DFD0D9258EC20C0005D4A4 /* Services */,
+				512D0F5B2597DAE200F58CE6 /* Views */,
 				51DFD0DA258EC2210005D4A4 /* View Controllers */,
 				51DFD0AF258C39560005D4A4 /* Assets.xcassets */,
 				51DFD0B4258C39560005D4A4 /* Info.plist */,
@@ -142,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				51DFD0E0258EC3860005D4A4 /* LocalStorageService.swift */,
+				512D0F512596872E00F58CE6 /* Networking.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +187,8 @@
 				51DFD0AA258C39540005D4A4 /* ViewController.swift */,
 				51DFD0EE258EE2A10005D4A4 /* HomeViewController.swift */,
 				519C7E0125941A200015C4A8 /* SettingsViewController.swift */,
+				512D0F562597D7ED00F58CE6 /* RestaurantTableViewController.swift */,
+				512D0F642598053D00F58CE6 /* MapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -314,13 +351,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				51DFD0AB258C39540005D4A4 /* ViewController.swift in Sources */,
+				512D0F6A25981BAB00F58CE6 /* Park.swift in Sources */,
+				512D0F522596872E00F58CE6 /* Networking.swift in Sources */,
 				51DFD0E1258EC3860005D4A4 /* LocalStorageService.swift in Sources */,
 				51DFD0E7258EC5A00005D4A4 /* NameHelper.swift in Sources */,
+				512D0F5D2597DB1400F58CE6 /* RestaurantTableViewCell.swift in Sources */,
 				51DFD0A7258C39540005D4A4 /* AppDelegate.swift in Sources */,
+				512D0F652598053D00F58CE6 /* MapViewController.swift in Sources */,
+				512D0F572597D7ED00F58CE6 /* RestaurantTableViewController.swift in Sources */,
 				519067032592A16E006F82C0 /* Enums.swift in Sources */,
 				51DFD0A9258C39540005D4A4 /* SceneDelegate.swift in Sources */,
 				51DFD0EF258EE2A10005D4A4 /* HomeViewController.swift in Sources */,
 				519C7E0225941A200015C4A8 /* SettingsViewController.swift in Sources */,
+				512D0F6F25981BC600F58CE6 /* Gym.swift in Sources */,
+				512D0F4A259685D300F58CE6 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

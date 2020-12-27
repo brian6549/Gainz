@@ -47,6 +47,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       // Networking.getTestSample()
+        
+       // Networking.getParks { (parks) in
+       //     print(parks)
+     //   }
+      //  Networking.getGyms { (gyms) in
+      //      print(gyms)
+    //    }
+        
         continueButton.layer.cornerRadius = 10
         
         //dismiss keyboard by tapping anywhere
