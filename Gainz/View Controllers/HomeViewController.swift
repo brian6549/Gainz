@@ -8,14 +8,11 @@
 import UIKit
 import CoreLocation
 
-//will eventually make into a profile but this works for now
-
 protocol updateOnScreenInfoDelegate {
     func updateInfo()
 }
 ///main view controller
 class HomeViewController: UIViewController {
-    
     
     @IBOutlet weak var BMILabel: UILabel!
     
@@ -86,14 +83,18 @@ class HomeViewController: UIViewController {
         switch weightStat {
         case .underWeight:
             statLabel.text = "You are currently under weight. \n\n You deserve a meal. Take a look at restaurants nearby: "
+            UIView.animate(withDuration: 1) {
+                self.seeParksButton.alpha = 0
+                self.seeGymsButton.alpha = 0
+            }
             
-            seeParksButton.alpha = 0
-            seeGymsButton.alpha = 0
             
         case .overWeight:
             statLabel.text = "You are currently over weight. \n\n It's okay, there are places nearby to help you be active."
             
-            //want to try and swap stuff in the stack view
+            
+            self.seeParksButton.alpha = 1
+            self.seeGymsButton.alpha = 1
             
             let restaurants = stackView.subviews[0]
             
@@ -111,6 +112,8 @@ class HomeViewController: UIViewController {
             
         default:
             statLabel.text = "You are currently at a healthy weight. \n\n Don't slack off! Eat healthy and get active."
+        
+            
         }
         
     }
@@ -251,8 +254,22 @@ extension HomeViewController: updateOnScreenInfoDelegate {
             
             stackView.updateConstraints()
             
+            if seeParksButton.superview != nil && seeGymsButton.superview != nil  {
+                            
+                            seeParksButton.alpha = 1
+                            seeGymsButton.alpha = 1
+
+            }
+            
         default:
             statLabel.text = "You are currently at a healthy weight. \n\n Don't slack off! Eat healthy and get active."
+            
+            if seeParksButton.superview != nil && seeGymsButton.superview != nil  {
+                            
+                            seeParksButton.alpha = 1
+                            seeGymsButton.alpha = 1
+
+            }
         }
         
     }

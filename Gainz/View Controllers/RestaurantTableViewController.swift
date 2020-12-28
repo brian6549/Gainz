@@ -30,6 +30,8 @@ class RestaurantTableViewController: UITableViewController {
                 self.restaurants = restaurants
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    let generator = UINotificationFeedbackGenerator()
+                    generator.notificationOccurred(.success)
                 }
                 
             }
@@ -41,7 +43,7 @@ class RestaurantTableViewController: UITableViewController {
     
     func showActionSheet(row: Int) {
         
-        var restaurant = restaurants[row]
+        let restaurant = restaurants[row]
         
         let actionSheet = UIAlertController(title: restaurant.restaurant_name, message: restaurant.hours, preferredStyle: .actionSheet)
         

@@ -84,6 +84,8 @@ class MapViewController: UIViewController {
                        annotations.coordinate = CLLocationCoordinate2D(latitude: park.location!["lat"]!, longitude: park.location!["lng"]!)
                       
                            self.mapView.addAnnotation(annotations)
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
                        
                    }
         } else {
@@ -93,11 +95,11 @@ class MapViewController: UIViewController {
                        annotations.coordinate = CLLocationCoordinate2D(latitude: gym.location!["lat"]!, longitude: gym.location!["lng"]!)
                       
                            self.mapView.addAnnotation(annotations)
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
                        
                    }
         }
-        
-       
         
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
